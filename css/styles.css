@@ -900,3 +900,276 @@ button {
   letter-spacing: normal;
   font-size: 0.875rem;
 }
+
+/* ====================================================
+   PROJECT IMAGE — hover overlay
+   ==================================================== */
+.project__img--link {
+  cursor: pointer;
+}
+.project__overlay {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in oklab, var(--ink) 60%, transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.75rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.project__img--link:hover .project__overlay,
+.project__img--link:focus-visible .project__overlay {
+  opacity: 1;
+}
+.project__overlay-label {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+}
+.project__img--link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+/* Make project__cta a button that looks like the existing anchor */
+button.project__cta {
+  margin-top: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-bottom: 1px solid color-mix(in oklab, var(--foreground) 30%, transparent);
+  padding-bottom: 4px;
+  background: none;
+  color: inherit;
+  transition: color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+button.project__cta:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ====================================================
+   PROJECT PAGE — full-screen slide-in panel
+   ==================================================== */
+.project-page {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--background);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  /* Slide in from right */
+  transform: translateX(100%);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.project-page.is-open {
+  transform: translateX(0);
+}
+
+/* Inner wrapper */
+.pp-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 6rem;
+}
+@media (min-width: 768px) {
+  .pp-inner {
+    padding: 2.5rem 2.5rem 8rem;
+  }
+}
+
+/* Close button */
+.pp-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted-fg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: 3rem;
+}
+.pp-close:hover {
+  color: var(--foreground);
+  border-color: var(--foreground);
+}
+
+/* Hero */
+.pp-hero {
+  margin-bottom: 3rem;
+}
+.pp-hero__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.pp-num {
+  color: var(--muted-fg);
+}
+.pp-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 0.95;
+}
+
+/* Gallery */
+.pp-gallery {
+  margin-bottom: 4rem;
+}
+.pp-gallery__main {
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--sand);
+}
+.pp-media-fig {
+  margin: 0;
+}
+.pp-media {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  animation: ppFade 0.3s ease;
+}
+video.pp-media {
+  object-fit: cover;
+  max-height: 60vh;
+  background: #000;
+}
+@keyframes ppFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.pp-media-fig figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--muted-fg);
+  letter-spacing: 0.05em;
+}
+
+/* Thumbnails */
+.pp-gallery__thumbs {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.pp-thumb {
+  width: 80px;
+  height: 56px;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.55;
+  transition: opacity 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+  background: var(--sand);
+}
+.pp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pp-thumb__video-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-fg);
+}
+.pp-thumb.is-active,
+.pp-thumb:hover {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+/* Content — 2-col layout */
+.pp-content {
+  display: grid;
+  gap: 4rem;
+}
+@media (min-width: 768px) {
+  .pp-content {
+    grid-template-columns: 1fr 280px;
+    gap: 6rem;
+    align-items: start;
+  }
+}
+
+/* Body sections */
+.pp-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.pp-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.pp-section__label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.pp-section__text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: color-mix(in oklab, var(--foreground) 80%, transparent);
+}
+
+/* Aside */
+.pp-aside {
+  position: sticky;
+  top: 2rem;
+}
+.pp-aside__block {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+.pp-aside__block:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+.pp-aside__block .kicker {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.pp-aside__block p,
+.pp-aside__block ul {
+  font-size: 0.9rem;
+  color: color-mix(in oklab, var(--foreground) 80%, transparent);
+}
+.pp-tools {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+.pp-tools li {
+  border: 1px solid color-mix(in oklab, var(--foreground) 20%, transparent);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.8rem;
+}
+
+/* Footer CTA */
+.pp-footer {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
