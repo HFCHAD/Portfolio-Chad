@@ -7,6 +7,23 @@
 const projects = [
   {
     n: "01",
+    title: "Je filme ma formation",
+    subtitle: "Vidéo · Trophée d'Or",
+    year: "2024",
+    client: "Concours national IUT",
+    role: "Création vidéo, travail d'équipe",
+    tools: ["Premiere Pro", "After Effects"],
+    img: "assets/project-film.jpg",
+    context: "Participation au concours national « Je filme ma formation » organisé par le réseau des IUT. Projet collectif mené avec 4 autres étudiants de la promotion.",
+    challenge: "Raconter notre formation en 3 minutes de façon authentique, créative et impactante, en partant de zéro avec un matériel limité.",
+    solution: "Narration visuelle construite autour de témoignages sincères, montage dynamique sous Premiere Pro et motion design sous After Effects. Résultat : Trophée d'Or.",
+    gallery: [
+      { type: "image", src: "assets/project-film.jpg", caption: "Trophée d'Or — Je filme ma formation" },
+      // { type: "youtube", videoId: "TON_ID_YOUTUBE", caption: "Vidéo primée" },
+    ],
+  },
+  {
+    n: "02",
     title: "SAE-Bière",
     subtitle: "Festival · Identité globale",
     year: "2025",
@@ -29,7 +46,7 @@ const projects = [
     ],
   },
   {
-    n: "02",
+    n: "03",
     title: "Association fictive",
     subtitle: "Branding · Web · Print",
     year: "2025",
@@ -41,28 +58,18 @@ const projects = [
     challenge: "Construire une image forte, mémorable et accessible qui reflète les valeurs d'une association à budget limité.",
     solution: "Palette épurée, iconographie simple et cohérente déclinée sur flyer, affiche, carte de visite et page web responsive conçue sur Figma.",
     gallery: [
-      { type: "image", src: "assets/project-association.jpg", caption: "Identité visuelle — Association fictive" },
-      // { type: "image", src: "assets/association-flyer.jpg", caption: "Flyer A5" },
-      // { type: "link-image", src: "assets/association-web.jpg", href: "https://ton-site-association.fr", caption: "Site web vitrine" },
+      { type: "image", src: "assets/Dossier IJT/charte graphique.jpg", caption: "Identité visuelle — Association fictive" },
+      { type: "image", src: "assets/Dossier IJT/sommaire.jpg", caption: "Sommaire " },
+      { type: "image", src: "assets/Dossier IJT/Logo.jpg", caption: "Logo " },
+      { type: "image", src: "assets/Dossier IJT/Typo.jpg", caption: "Typographie " },
+      { type: "image", src: "assets/Dossier IJT/Palette de couleurs.jpg", caption: "Palette de couleurs " },
+      { type: "image", src: "assets/Dossier IJT/Variantes du logo.jpg", caption: "Variantes du logo " },
+      { type: "image", src: "assets/Dossier IJT/Mode d'utilisation.jpg", caption: "Mode d'utilisation " },
+      { type: "link-image", src: "assets/Dossier IJT/capture d'écran.png", href: "https://but1.mmi-iutsf.org/S1/2025_S1/groupe_i/index.html", caption: "Site web vitrine" },
+      { type: "video", src: "assets/Dossier IJT/Vidéo de sensibilisation.mp4", caption: "Vidéo de sensibilisation" },
     ],
   },
-  {
-    n: "03",
-    title: "Je filme ma formation",
-    subtitle: "Vidéo · Trophée d'Or",
-    year: "2024",
-    client: "Concours national IUT",
-    role: "Création vidéo, travail d'équipe",
-    tools: ["Premiere Pro", "After Effects"],
-    img: "assets/project-film.jpg",
-    context: "Participation au concours national « Je filme ma formation » organisé par le réseau des IUT. Projet collectif mené avec 4 autres étudiants de la promotion.",
-    challenge: "Raconter notre formation en 3 minutes de façon authentique, créative et impactante, en partant de zéro avec un matériel limité.",
-    solution: "Narration visuelle construite autour de témoignages sincères, montage dynamique sous Premiere Pro et motion design sous After Effects. Résultat : Trophée d'Or.",
-    gallery: [
-      { type: "image", src: "assets/project-film.jpg", caption: "Trophée d'Or — Je filme ma formation" },
-      // { type: "youtube", videoId: "TON_ID_YOUTUBE", caption: "Vidéo primée" },
-    ],
-  },
+  
 ];
 
 const skills = [
