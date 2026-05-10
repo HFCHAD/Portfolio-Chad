@@ -10,19 +10,21 @@ const projects = [
     title: "SAE-Bière",
     subtitle: "Festival · Identité globale",
     year: "2025",
+    client: "Génie Biologique (Projet Universitaire)",
     role: "Direction artistique, charte graphique, poster, page goodies, vidéo",
     tools: ["Illustrator", "Photoshop", "Figma", "Premiere"],
-    img: "assets/affiche SAE-Bière.png",
-    // ---- PAGE DÉTAIL ----
+    img: "assets/Dossier Odysseia/Odysseia.png",
     context: "Projet universitaire de 1re année de BUT MMI. L'objectif était de concevoir l'identité visuelle complète d'un festival imaginaire autour du thème de la bière artisanale, du premier logo jusqu'à l'affiche officielle et aux goodies.",
     challenge: "Créer un univers graphique cohérent, festif et premium, déclinable sur tous les supports de communication : print, web et vidéo.",
     solution: "Direction artistique centrée sur des tonalités chaudes et une typographie expressive. La charte a été déclinée en affiche A0, page goodies du site web et vidéo promotionnelle.",
-    // Ajoute ici tes vraies images et/ou vidéos du projet :
     gallery: [
-      { type: "image", src: "assets/affiche SAE-Bière.png", caption: "Affiche officielle — SAE-Bière" },
-      // { type: "image", src: "assets/saebiere-charte.jpg", caption: "Charte graphique" },
-      // { type: "image", src: "assets/saebiere-goodies.jpg", caption: "Page goodies" },
-      // { type: "video", src: "assets/saebiere-video.mp4", caption: "Vidéo promotionnelle" },
+      { type: "image", src: "assets/Dossier Odysseia/Odysseia banner.png", caption: "Bannière — SAE-Bière" },
+      { type: "image", src: "assets/Dossier Odysseia/ODYSSEIA-uniquetiquette-1.jpg", caption: "Étiquette unique" },
+      { type: "image", src: "assets/Dossier Odysseia/ODYSSEIA-mulitietiquette-2.jpg", caption: "Étiquettes multiples" },
+      // Pour ajouter un lien vers le site web, utilise type:"link-image" avec href:
+      { type: "link-image", src: "assets/Dossier Odysseia/Odysseia-website-3.jpg", href: "https://but1.mmi-iutsf.org/S2/2025/odysseia/index.php?route=accueil", caption: "Site web SAE-Bière" },
+      { type: "video", src: "assets/Dossier Odysseia/Coulisse Brassage - Odysseia.mp4", caption: "Vidéo promotionnelle" },
+      // Pour une vidéo YouTube : { type: "youtube", videoId: "TON_ID_YT", caption: "Vidéo promo" },
     ],
   },
   {
@@ -30,6 +32,7 @@ const projects = [
     title: "Association fictive",
     subtitle: "Branding · Web · Print",
     year: "2025",
+    client: "Association fictive (Projet Universitaire)",
     role: "Identité visuelle, supports de communication, page web",
     tools: ["Illustrator", "Figma", "InDesign"],
     img: "assets/project-association.jpg",
@@ -39,7 +42,7 @@ const projects = [
     gallery: [
       { type: "image", src: "assets/project-association.jpg", caption: "Identité visuelle — Association fictive" },
       // { type: "image", src: "assets/association-flyer.jpg", caption: "Flyer A5" },
-      // { type: "image", src: "assets/association-web.jpg", caption: "Page web vitrine" },
+      // { type: "link-image", src: "assets/association-web.jpg", href: "https://ton-site-association.fr", caption: "Site web vitrine" },
     ],
   },
   {
@@ -47,6 +50,7 @@ const projects = [
     title: "Je filme ma formation",
     subtitle: "Vidéo · Trophée d'Or",
     year: "2024",
+    client: "Concours national IUT",
     role: "Création vidéo, travail d'équipe",
     tools: ["Premiere Pro", "After Effects"],
     img: "assets/project-film.jpg",
@@ -55,7 +59,7 @@ const projects = [
     solution: "Narration visuelle construite autour de témoignages sincères, montage dynamique sous Premiere Pro et motion design sous After Effects. Résultat : Trophée d'Or.",
     gallery: [
       { type: "image", src: "assets/project-film.jpg", caption: "Trophée d'Or — Je filme ma formation" },
-      // { type: "video", src: "assets/film-formation.mp4", caption: "Vidéo primée" },
+      // { type: "youtube", videoId: "TON_ID_YOUTUBE", caption: "Vidéo primée" },
     ],
   },
 ];
@@ -173,7 +177,7 @@ let currentProject = null;
 function openProject(idx) {
   currentProject = projects[idx];
   currentGalleryIdx = 0;
-  renderProjectPage(currentProject);
+  renderProjectPage(currentProject, idx);
   const panel = document.getElementById("projectPage");
   panel.classList.add("is-open");
   panel.scrollTop = 0;
@@ -186,93 +190,163 @@ function closeProject() {
   document.body.style.overflow = "";
 }
 
-function renderProjectPage(p) {
+function renderProjectPage(p, idx) {
   const panel = document.getElementById("projectPage");
+  const prevIdx = idx > 0 ? idx - 1 : null;
+  const nextIdx = idx < projects.length - 1 ? idx + 1 : null;
 
-  // Gallery
-  const galleryHTML = p.gallery.length > 1
-    ? `<div class="pp-gallery">
-        <div class="pp-gallery__main" id="ppMainMedia">${renderMediaEl(p.gallery[0])}</div>
-        <div class="pp-gallery__thumbs" id="ppThumbs">
-          ${p.gallery.map((m, i) => `
-            <div class="pp-thumb ${i === 0 ? "is-active" : ""}" data-gidx="${i}">
-              ${m.type === "video"
-                ? `<div class="pp-thumb__video-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>`
-                : `<img src="${m.src}" alt="${m.caption || ""}" />`
-              }
-            </div>`).join("")}
-        </div>
+  // ---- HERO (1re image de gallery) ----
+  const heroMedia = p.gallery[0];
+  const heroHTML = heroMedia
+    ? `<div class="pp-hero-media">
+        ${heroMedia.type === "video"
+          ? `<video class="pp-hero-img" controls playsinline preload="metadata"><source src="${heroMedia.src}" /></video>`
+          : `<img class="pp-hero-img" src="${heroMedia.src}" alt="${heroMedia.caption || p.title}" />`
+        }
       </div>`
-    : `<div class="pp-gallery"><div class="pp-gallery__main">${renderMediaEl(p.gallery[0])}</div></div>`;
+    : "";
 
-  panel.innerHTML = `
-    <div class="pp-inner">
-      <button class="pp-close" id="ppClose" aria-label="Fermer">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        Fermer
-      </button>
+  // ---- GALERIE (tout sauf le hero, pleine largeur empilé) ----
+  const galleryItems = p.gallery.slice(1);
+  const galleryHTML = galleryItems.length > 0
+    ? `<div class="pp-gallery-stack">
+        ${galleryItems.map((m) => {
+          if (m.type === "youtube") {
+            // Miniature YouTube cliquable avec play overlay
+            const thumbUrl = `https://img.youtube.com/vi/${m.videoId}/maxresdefault.jpg`;
+            return `<figure class="pp-stack-fig">
+              <a class="pp-yt-thumb" href="https://youtu.be/${m.videoId}" target="_blank" rel="noopener">
+                <img src="${thumbUrl}" alt="${m.caption || "Vidéo"}" loading="lazy" />
+                <div class="pp-yt-play">
+                  <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.55)"/>
+                    <polygon points="32,24 60,40 32,56" fill="white"/>
+                  </svg>
+                </div>
+              </a>
+              ${m.caption ? `<figcaption>${m.caption}</figcaption>` : ""}
+            </figure>`;
+          }
+          if (m.type === "video") {
+            return `<figure class="pp-stack-fig">
+              <video class="pp-stack-media" controls playsinline preload="metadata">
+                <source src="${m.src}" />
+              </video>
+              ${m.caption ? `<figcaption>${m.caption}</figcaption>` : ""}
+            </figure>`;
+          }
+          if (m.type === "link-image") {
+            // Image cliquable → lien vers site web, avec bouton "Voir le site"
+            return `<figure class="pp-stack-fig">
+              <a href="${m.href}" target="_blank" rel="noopener" class="pp-site-link-wrap">
+                <img class="pp-stack-media" src="${m.src}" alt="${m.caption || ""}" loading="lazy" />
+                <div class="pp-site-link-overlay">
+                  <span class="pp-site-link-btn">Voir le site <span>↗</span></span>
+                </div>
+              </a>
+              ${m.caption ? `<figcaption>${m.caption}</figcaption>` : ""}
+            </figure>`;
+          }
+          // image standard
+          return `<figure class="pp-stack-fig">
+            <img class="pp-stack-media" src="${m.src}" alt="${m.caption || ""}" loading="lazy" />
+            ${m.caption ? `<figcaption>${m.caption}</figcaption>` : ""}
+          </figure>`;
+        }).join("")}
+      </div>`
+    : "";
 
-      <div class="pp-hero">
-        <div class="pp-hero__meta">
-          <span class="kicker">${p.subtitle}</span>
-          <span class="kicker pp-num">${p.n} / ${p.year}</span>
-        </div>
-        <h2 class="display pp-title">${p.title}<span class="accent">.</span></h2>
+  // ---- NAV précédent / suivant ----
+  const navHTML = `
+    <div class="pp-nav">
+      <div class="pp-nav__prev">
+        ${prevIdx !== null
+          ? `<button class="pp-nav__btn" data-goto="${prevIdx}">
+              <span class="pp-nav__arrow">←</span>
+              <span class="pp-nav__label">
+                <span class="kicker">Projet précédent</span>
+                <span class="pp-nav__name">${projects[prevIdx].title}</span>
+              </span>
+            </button>`
+          : `<span></span>`
+        }
       </div>
-
-      ${galleryHTML}
-
-      <div class="pp-content">
-        <div class="pp-body">
-          <div class="pp-section">
-            <span class="kicker pp-section__label">Contexte</span>
-            <p class="pp-section__text">${p.context}</p>
-          </div>
-          <div class="pp-section">
-            <span class="kicker pp-section__label">Défi</span>
-            <p class="pp-section__text">${p.challenge}</p>
-          </div>
-          <div class="pp-section">
-            <span class="kicker pp-section__label">Solution</span>
-            <p class="pp-section__text">${p.solution}</p>
-          </div>
-        </div>
-        <aside class="pp-aside">
-          <div class="pp-aside__block">
-            <span class="kicker">Rôle</span>
-            <p>${p.role}</p>
-          </div>
-          <div class="pp-aside__block">
-            <span class="kicker">Année</span>
-            <p>${p.year}</p>
-          </div>
-          <div class="pp-aside__block">
-            <span class="kicker">Outils</span>
-            <ul class="pp-tools">
-              ${p.tools.map(t => `<li>${t}</li>`).join("")}
-            </ul>
-          </div>
-        </aside>
-      </div>
-
-      <div class="pp-footer">
-        <a href="#contact" class="btn btn--solid" onclick="closeProject()">Me contacter ↗</a>
+      <div class="pp-nav__next">
+        ${nextIdx !== null
+          ? `<button class="pp-nav__btn pp-nav__btn--next" data-goto="${nextIdx}">
+              <span class="pp-nav__label">
+                <span class="kicker">Projet suivant</span>
+                <span class="pp-nav__name">${projects[nextIdx].title}</span>
+              </span>
+              <span class="pp-nav__arrow">→</span>
+            </button>`
+          : `<span></span>`
+        }
       </div>
     </div>`;
 
-  // Bind close
-  document.getElementById("ppClose").addEventListener("click", closeProject);
+  panel.innerHTML = `
+    <div class="pp-inner">
 
-  // Bind thumbnails
-  if (p.gallery.length > 1) {
-    document.querySelectorAll("[data-gidx]").forEach((el) => {
-      el.addEventListener("click", () => {
-        currentGalleryIdx = parseInt(el.getAttribute("data-gidx"), 10);
-        document.getElementById("ppMainMedia").innerHTML = renderMediaEl(p.gallery[currentGalleryIdx]);
-        document.querySelectorAll("[data-gidx]").forEach(t => t.classList.toggle("is-active", parseInt(t.getAttribute("data-gidx"), 10) === currentGalleryIdx));
-      });
-    });
-  }
+      <!-- Barre retour -->
+      <div class="pp-topbar">
+        <button class="pp-close" id="ppClose" aria-label="Fermer">
+          ← Retour aux projets
+        </button>
+      </div>
+
+      <!-- Titre + catégorie -->
+      <div class="pp-header">
+        <h2 class="display pp-title">${p.title}<span class="accent">.</span></h2>
+        <p class="pp-subtitle kicker">${p.subtitle}</p>
+      </div>
+
+      <!-- Image hero pleine largeur -->
+      ${heroHTML}
+
+      <!-- Bloc infos : Client · Rôle · Outils -->
+      <div class="pp-meta-bar">
+        <div class="pp-meta-item">
+          <h3 class="pp-meta-label">Client</h3>
+          <p>${p.client || "Projet universitaire BUT MMI"}</p>
+        </div>
+        <div class="pp-meta-item">
+          <h3 class="pp-meta-label">Rôle</h3>
+          <p>${p.role}</p>
+        </div>
+        <div class="pp-meta-item pp-meta-item--tools">
+          <h3 class="pp-meta-label">Outils</h3>
+          <div class="pp-tools-row">
+            ${p.tools.map(t => `<span class="pp-tool-tag">${t}</span>`).join("")}
+          </div>
+        </div>
+      </div>
+
+      <!-- Le Défi -->
+      <div class="pp-text-section">
+        <h2 class="pp-section-title">Le Défi</h2>
+        <p class="pp-section__text">${p.challenge}</p>
+      </div>
+
+      <!-- La Solution -->
+      <div class="pp-text-section">
+        <h2 class="pp-section-title">La Solution</h2>
+        <p class="pp-section__text">${p.solution}</p>
+      </div>
+
+      <!-- Galerie empilée pleine largeur -->
+      ${galleryHTML}
+
+      <!-- Nav précédent / suivant -->
+      ${navHTML}
+
+    </div>`;
+
+  // Events
+  document.getElementById("ppClose").addEventListener("click", closeProject);
+  panel.querySelectorAll("[data-goto]").forEach((btn) => {
+    btn.addEventListener("click", () => openProject(parseInt(btn.getAttribute("data-goto"), 10)));
+  });
 }
 
 function renderMediaEl(item) {
