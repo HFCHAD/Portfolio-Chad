@@ -68,7 +68,7 @@ const projects = [
       { type: "image", src: "assets/Dossier IJT/Variantes du logo.jpg", caption: "Variantes du logo " },
       { type: "image", src: "assets/Dossier IJT/Mode d'utilisation.jpg", caption: "Mode d'utilisation " },
       { type: "link-image", src: "assets/Dossier IJT/capture d'écran.png", href: "https://but1.mmi-iutsf.org/S1/2025_S1/groupe_i/index.html", caption: "Site web vitrine" },
-      { type: "video", src: "assets/Dossier IJT/Vidéo de sensibilisation.mp4", caption: "Vidéo de sensibilisation" },
+      { type: "youtube", videoId: "EuM88tKi4T4", caption: "Vidéo promo" },
     ],
   },
   
