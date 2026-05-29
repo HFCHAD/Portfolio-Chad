@@ -44,8 +44,7 @@ const projects = [
       // Pour ajouter un lien vers le site web, utilise type:"link-image" avec href:
       { type: "link-image", src: "assets/Dossier Odysseia/Odysseia-website-3.jpg", href: "https://but1.mmi-iutsf.org/S2/2025/odysseia/index.php?route=accueil", caption: "Site web SAE-Bière" },
        { type: "image", src: "assets/Dossier Odysseia/ODYSSEIA-rsn-i.jpg", caption: "Compte instagram Odysseïa" },
-      { type: "video", src: "assets/Dossier Odysseia/Coulisse Brassage - Odysseia.mp4", caption: "Vidéo promotionnelle" },
-      // Pour une vidéo YouTube : { type: "youtube", videoId: "TON_ID_YT", caption: "Vidéo promo" },
+      { type: "youtube", videoId: "Ic1YwxXq5x4", caption: "Vidéo promo" },
     ],
   },
   {
