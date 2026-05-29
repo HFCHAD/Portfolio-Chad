@@ -428,42 +428,6 @@ function initReveal() {
   els.forEach((el) => io.observe(el));
 }
 
-// ========== Mobile Menu (Hamburger) ==========
-function initMobileMenu() {
-  const btn = document.getElementById("menuToggle");
-  const links = document.getElementById("navLinks");
-  if (!btn || !links) return;
-
-  const iconOpen = btn.querySelector(".menu-icon--open");
-  const iconClose = btn.querySelector(".menu-icon--close");
-
-  function toggleMenu(force) {
-    const isOpen = force !== undefined ? force : !links.classList.contains("is-open");
-    links.classList.toggle("is-open", isOpen);
-    btn.setAttribute("aria-expanded", String(isOpen));
-    iconOpen.style.display = isOpen ? "none" : "";
-    iconClose.style.display = isOpen ? "" : "none";
-    document.body.style.overflow = isOpen ? "hidden" : "";
-  }
-
-  btn.addEventListener("click", () => toggleMenu());
-
-  // Close menu when a nav link is clicked
-  links.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => toggleMenu(false));
-  });
-
-  // Close menu on resize to desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768) toggleMenu(false);
-  }, { passive: true });
-
-  // Close on Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && links.classList.contains("is-open")) toggleMenu(false);
-  });
-}
-
 // ========== Boot ==========
 document.addEventListener("DOMContentLoaded", () => {
   injectProjectPage();
@@ -473,5 +437,4 @@ document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initTheme();
   initReveal();
-  initMobileMenu();
 });
