@@ -15,6 +15,7 @@ const projects = [
     solution: "Narration visuelle construite autour de témoignages sincères, montage dynamique sous Premiere Pro et motion design sous After Effects. Résultat : Trophée d'Or.",
     gallery: [
       { type: "image", src: "assets/Je filme ma formation/Logo.png", caption: "Trophée d'Or — Je filme ma formation" },
+       { type: "image", src: "assets/Dossier Odysseia/Odysseia banner.png", caption: "Bannière — SAE-Bière" },
       // { type: "youtube", videoId: "TON_ID_YOUTUBE", caption: "Vidéo primée" },
     ],
   },
