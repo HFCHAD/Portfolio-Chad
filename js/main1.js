@@ -396,25 +396,6 @@ function initNav() {
   const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 24);
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
-
-  // Hamburger menu
-  const hamburger = document.getElementById("hamburgerToggle");
-  const drawer = document.getElementById("navDrawer");
-  if (hamburger && drawer) {
-    hamburger.addEventListener("click", () => {
-      const isOpen = drawer.classList.toggle("is-open");
-      hamburger.classList.toggle("is-open", isOpen);
-      hamburger.setAttribute("aria-expanded", isOpen);
-    });
-    // Close drawer when a link is clicked
-    drawer.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        drawer.classList.remove("is-open");
-        hamburger.classList.remove("is-open");
-        hamburger.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
 }
 
 // ========== Theme ==========
