@@ -1,67 +1,72 @@
-/* =========================================================
-   Chadrack Nsimba Bitombo — Portfolio · main.js
-   ========================================================= */
 
-// ========== DATA ==========
 
 const projects = [
   {
     n: "01",
+    title: "Je filme ma formation",
+    subtitle: "Vidéo · Trophée d'Or",
+    year: "2026",
+    client: "Concours national IUT",
+    role: "Création vidéo, travail d'équipe",
+    tools: ["Premiere Pro", "After Effects"],
+    img: "assets/Je filme ma formation/AFFICHE.png",
+    context: "Participation au concours national « Je filme ma formation » organisé par le réseau des IUT. Projet collectif mené avec 4 autres étudiants de la promotion.",
+    challenge: "Raconter notre formation en 3 minutes de façon authentique, créative et impactante, en partant de zéro avec un matériel limité.",
+    solution: "Narration visuelle construite autour de témoignages sincères, montage dynamique sous Premiere Pro et motion design sous After Effects. Résultat : Trophée d'Or.",
+    gallery: [
+      { type: "image", src: "assets/Je filme ma formation/Logo.png", caption: "Trophée d'Or — Je filme ma formation" },
+      // { type: "youtube", videoId: "TON_ID_YOUTUBE", caption: "Vidéo primée" },
+    ],
+  },
+  {
+    n: "02",
     title: "SAE-Bière",
     subtitle: "Festival · Identité globale",
     year: "2025",
     client: "Génie Biologique (Projet Universitaire)",
     role: "Direction artistique, charte graphique, poster, page goodies, vidéo",
     tools: ["Illustrator", "Photoshop", "Figma", "Premiere"],
-    img: "assets/Dossier Odysseia/Odysseia.png",
+    img: "assets/Dossier Odysseia/Ody-Hero-0.jpg",
     context: "Projet universitaire de 1re année de BUT MMI. L'objectif était de concevoir l'identité visuelle complète d'un festival imaginaire autour du thème de la bière artisanale, du premier logo jusqu'à l'affiche officielle et aux goodies.",
     challenge: "Créer un univers graphique cohérent, festif et premium, déclinable sur tous les supports de communication : print, web et vidéo.",
     solution: "Direction artistique centrée sur des tonalités chaudes et une typographie expressive. La charte a été déclinée en affiche A0, page goodies du site web et vidéo promotionnelle.",
     gallery: [
-      { type: "image", src: "assets/Dossier Odysseia/Odysseia.png", caption: "Bannière — SAE-Bière" },
+      { type: "image", src: "assets/Dossier Odysseia/Odysseia banner.png", caption: "Bannière — SAE-Bière" },
       { type: "image", src: "assets/Dossier Odysseia/ODYSSEIA-uniquetiquette-1.jpg", caption: "Étiquette unique" },
       { type: "image", src: "assets/Dossier Odysseia/ODYSSEIA-mulitietiquette-2.jpg", caption: "Étiquettes multiples" },
+      { type: "image", src: "assets/Dossier Odysseia/ODYSSEIA-multiaffiche.jpg", caption: "Affiches Odysseïa" },
       // Pour ajouter un lien vers le site web, utilise type:"link-image" avec href:
-      // { type: "link-image", src: "assets/saebiere-website.jpg", href: "https://ton-lien.fr", caption: "Site web SAE-Bière" },
+      { type: "link-image", src: "assets/Dossier Odysseia/Odysseia-website-3.jpg", href: "https://but1.mmi-iutsf.org/S2/2025/odysseia/index.php?route=accueil", caption: "Site web SAE-Bière" },
+       { type: "image", src: "assets/Dossier Odysseia/ODYSSEIA-rsn-i.jpg", caption: "Compte instagram Odysseïa" },
       { type: "video", src: "assets/Dossier Odysseia/Coulisse Brassage - Odysseia.mp4", caption: "Vidéo promotionnelle" },
       // Pour une vidéo YouTube : { type: "youtube", videoId: "TON_ID_YT", caption: "Vidéo promo" },
     ],
   },
   {
-    n: "02",
+    n: "03",
     title: "Association fictive",
     subtitle: "Branding · Web · Print",
-    year: "2025",
+    year: "2024",
     client: "Association fictive (Projet Universitaire)",
     role: "Identité visuelle, supports de communication, page web",
     tools: ["Illustrator", "Figma", "InDesign"],
-    img: "assets/project-association.jpg",
+    img: "assets/Dossier IJT/Logo.jpg",
     context: "Projet de création d'une identité de marque complète pour une association fictive engagée dans le développement durable. De la conception du logo jusqu'à la page web vitrine.",
     challenge: "Construire une image forte, mémorable et accessible qui reflète les valeurs d'une association à budget limité.",
     solution: "Palette épurée, iconographie simple et cohérente déclinée sur flyer, affiche, carte de visite et page web responsive conçue sur Figma.",
     gallery: [
-      { type: "image", src: "assets/project-association.jpg", caption: "Identité visuelle — Association fictive" },
-      // { type: "image", src: "assets/association-flyer.jpg", caption: "Flyer A5" },
-      // { type: "link-image", src: "assets/association-web.jpg", href: "https://ton-site-association.fr", caption: "Site web vitrine" },
+      { type: "image", src: "assets/Dossier IJT/charte graphique.jpg", caption: "Identité visuelle — Association fictive" },
+      { type: "image", src: "assets/Dossier IJT/sommaire.jpg", caption: "Sommaire " },
+      { type: "image", src: "assets/Dossier IJT/Logo.jpg", caption: "Logo " },
+      { type: "image", src: "assets/Dossier IJT/Typo.jpg", caption: "Typographie " },
+      { type: "image", src: "assets/Dossier IJT/Palette de couleurs.jpg", caption: "Palette de couleurs " },
+      { type: "image", src: "assets/Dossier IJT/Variantes du logo.jpg", caption: "Variantes du logo " },
+      { type: "image", src: "assets/Dossier IJT/Mode d'utilisation.jpg", caption: "Mode d'utilisation " },
+      { type: "link-image", src: "assets/Dossier IJT/capture d'écran.png", href: "https://but1.mmi-iutsf.org/S1/2025_S1/groupe_i/index.html", caption: "Site web vitrine" },
+      { type: "video", src: "assets/Dossier IJT/Vidéo de sensibilisation.mp4", caption: "Vidéo de sensibilisation" },
     ],
   },
-  {
-    n: "03",
-    title: "Je filme ma formation",
-    subtitle: "Vidéo · Trophée d'Or",
-    year: "2024",
-    client: "Concours national IUT",
-    role: "Création vidéo, travail d'équipe",
-    tools: ["Premiere Pro", "After Effects"],
-    img: "assets/project-film.jpg",
-    context: "Participation au concours national « Je filme ma formation » organisé par le réseau des IUT. Projet collectif mené avec 4 autres étudiants de la promotion.",
-    challenge: "Raconter notre formation en 3 minutes de façon authentique, créative et impactante, en partant de zéro avec un matériel limité.",
-    solution: "Narration visuelle construite autour de témoignages sincères, montage dynamique sous Premiere Pro et motion design sous After Effects. Résultat : Trophée d'Or.",
-    gallery: [
-      { type: "image", src: "assets/project-film.jpg", caption: "Trophée d'Or — Je filme ma formation" },
-      // { type: "youtube", videoId: "TON_ID_YOUTUBE", caption: "Vidéo primée" },
-    ],
-  },
+  
 ];
 
 const skills = [
@@ -190,204 +195,67 @@ function closeProject() {
   document.body.style.overflow = "";
 }
 
-// ========== LIGHTBOX ==========
-
-let lightboxItems = [];   // liste {type, src/videoId/href, caption}
-let lightboxIdx   = 0;
-
-function openLightbox(items, startIdx) {
-  lightboxItems = items;
-  lightboxIdx   = startIdx;
-  renderLightboxSlide();
-  document.getElementById("lightbox").classList.add("lb-open");
-  document.body.style.overflow = "hidden";
-}
-
-function closeLightbox() {
-  const lb = document.getElementById("lightbox");
-  lb.classList.remove("lb-open");
-  // pause any playing video
-  lb.querySelectorAll("video").forEach(v => v.pause());
-  // don't reset main panel scroll lock
-  if (!document.getElementById("projectPage").classList.contains("is-open")) {
-    document.body.style.overflow = "";
-  }
-}
-
-function lbNavigate(dir) {
-  lightboxIdx = (lightboxIdx + dir + lightboxItems.length) % lightboxItems.length;
-  renderLightboxSlide();
-}
-
-function renderLightboxSlide() {
-  const m   = lightboxItems[lightboxIdx];
-  const cnt = document.getElementById("lbContent");
-  const cap = document.getElementById("lbCaption");
-  const counter = document.getElementById("lbCounter");
-
-  // pause previous video
-  cnt.querySelectorAll("video").forEach(v => v.pause());
-
-  if (m.type === "video") {
-    cnt.innerHTML = `<video class="lb-video" controls playsinline autoplay>
-      <source src="${m.src}" />
-    </video>`;
-  } else if (m.type === "youtube") {
-    cnt.innerHTML = `<iframe class="lb-iframe"
-      src="https://www.youtube.com/embed/${m.videoId}?autoplay=1"
-      allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-  } else {
-    cnt.innerHTML = `<img class="lb-img" src="${m.src || ""}" alt="${m.caption || ""}" />`;
-  }
-
-  cap.textContent     = m.caption || "";
-  counter.textContent = `${lightboxIdx + 1} / ${lightboxItems.length}`;
-
-  // show/hide arrows
-  const showArrows = lightboxItems.length > 1;
-  document.getElementById("lbPrev").style.display = showArrows ? "" : "none";
-  document.getElementById("lbNext").style.display = showArrows ? "" : "none";
-}
-
-function injectLightbox() {
-  const lb = document.createElement("div");
-  lb.id        = "lightbox";
-  lb.className = "lightbox";
-  lb.setAttribute("role", "dialog");
-  lb.setAttribute("aria-modal", "true");
-  lb.innerHTML = `
-    <div class="lb-backdrop" id="lbBackdrop"></div>
-    <button class="lb-close" id="lbClose" aria-label="Fermer">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-           stroke-linecap="round" stroke-linejoin="round">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-    <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Précédent">‹</button>
-    <button class="lb-arrow lb-next" id="lbNext" aria-label="Suivant">›</button>
-    <div class="lb-stage">
-      <div class="lb-content" id="lbContent"></div>
-      <div class="lb-footer">
-        <span class="lb-caption" id="lbCaption"></span>
-        <span class="lb-counter" id="lbCounter"></span>
-      </div>
-    </div>`;
-  document.body.appendChild(lb);
-
-  document.getElementById("lbClose").addEventListener("click", closeLightbox);
-  document.getElementById("lbBackdrop").addEventListener("click", closeLightbox);
-  document.getElementById("lbPrev").addEventListener("click", () => lbNavigate(-1));
-  document.getElementById("lbNext").addEventListener("click", () => lbNavigate(1));
-
-  document.addEventListener("keydown", (e) => {
-    if (!document.getElementById("lightbox").classList.contains("lb-open")) return;
-    if (e.key === "Escape")      closeLightbox();
-    if (e.key === "ArrowLeft")   lbNavigate(-1);
-    if (e.key === "ArrowRight")  lbNavigate(1);
-  });
-}
-
-// ========== PROJECT PAGE ==========
-
 function renderProjectPage(p, idx) {
-  const panel   = document.getElementById("projectPage");
+  const panel = document.getElementById("projectPage");
   const prevIdx = idx > 0 ? idx - 1 : null;
   const nextIdx = idx < projects.length - 1 ? idx + 1 : null;
 
-  // ---- HERO : 1re image, non-cliquable, pleine largeur ----
+  // ---- HERO (1re image de gallery) ----
   const heroMedia = p.gallery[0];
   const heroHTML = heroMedia
     ? `<div class="pp-hero-media">
         ${heroMedia.type === "video"
-          ? `<video class="pp-hero-img" controls playsinline preload="metadata">
-               <source src="${heroMedia.src}" />
-             </video>`
+          ? `<video class="pp-hero-img" controls playsinline preload="metadata"><source src="${heroMedia.src}" /></video>`
           : `<img class="pp-hero-img" src="${heroMedia.src}" alt="${heroMedia.caption || p.title}" />`
         }
       </div>`
     : "";
 
-  // ---- Items lightbox : galerie hors hero, hors link-image ----
+  // ---- GALERIE (tout sauf le hero, pleine largeur empilé) ----
   const galleryItems = p.gallery.slice(1);
-  const lbItems = galleryItems.filter(m => ["image", "video", "youtube"].includes(m.type));
-
-  // ---- GALERIE : grille 2 colonnes, images en taille naturelle ----
-  let lbIdx = 0;
   const galleryHTML = galleryItems.length > 0
-    ? `<div class="pp-gallery-grid">
+    ? `<div class="pp-gallery-stack">
         ${galleryItems.map((m) => {
-
-          /* ——— YouTube ——— */
           if (m.type === "youtube") {
-            const i = lbIdx++;
-            const thumb = `https://img.youtube.com/vi/${m.videoId}/mqdefault.jpg`;
-            return `<figure class="pp-gitem pp-gitem--yt" data-lb-idx="${i}">
-              <div class="pp-gitem__wrap">
-                <img class="pp-gitem__img" src="${thumb}" alt="${m.caption || "Vidéo"}" loading="lazy" />
-                <div class="pp-gitem__play">
-                  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            // Miniature YouTube cliquable avec play overlay
+            const thumbUrl = `https://img.youtube.com/vi/${m.videoId}/maxresdefault.jpg`;
+            return `<figure class="pp-stack-fig">
+              <a class="pp-yt-thumb" href="https://youtu.be/${m.videoId}" target="_blank" rel="noopener">
+                <img src="${thumbUrl}" alt="${m.caption || "Vidéo"}" loading="lazy" />
+                <div class="pp-yt-play">
+                  <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.55)"/>
                     <polygon points="32,24 60,40 32,56" fill="white"/>
                   </svg>
-                </div>
-              </div>
-              ${m.caption ? `<figcaption class="pp-gitem__cap">${m.caption}</figcaption>` : ""}
-            </figure>`;
-          }
-
-          /* ——— Vidéo locale ——— */
-          if (m.type === "video") {
-            const i = lbIdx++;
-            return `<figure class="pp-gitem pp-gitem--video" data-lb-idx="${i}">
-              <div class="pp-gitem__wrap">
-                <video class="pp-gitem__img" preload="metadata" playsinline muted>
-                  <source src="${m.src}" />
-                </video>
-                <div class="pp-gitem__play">
-                  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.55)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
-                    <polygon points="32,24 60,40 32,56" fill="white"/>
-                  </svg>
-                </div>
-              </div>
-              ${m.caption ? `<figcaption class="pp-gitem__cap">${m.caption}</figcaption>` : ""}
-            </figure>`;
-          }
-
-          /* ——— Image avec lien (site web) ——— */
-          if (m.type === "link-image") {
-            return `<figure class="pp-gitem pp-gitem--link">
-              <a class="pp-gitem__wrap pp-gitem__link-a" href="${m.href}" target="_blank" rel="noopener noreferrer">
-                <img class="pp-gitem__img" src="${m.src}" alt="${m.caption || ""}" loading="lazy" />
-                <div class="pp-gitem__link-badge">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                    <polyline points="15 3 21 3 21 9"/>
-                    <line x1="10" y1="14" x2="21" y2="3"/>
-                  </svg>
-                  Voir le site
                 </div>
               </a>
-              ${m.href ? `<a class="pp-gitem__url" href="${m.href}" target="_blank" rel="noopener noreferrer">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                ${m.href.replace(/^https?:\/\//, "")}
-              </a>` : ""}
-              ${m.caption ? `<figcaption class="pp-gitem__cap">${m.caption}</figcaption>` : ""}
+              ${m.caption ? `<figcaption>${m.caption}</figcaption>` : ""}
             </figure>`;
           }
-
-          /* ——— Image standard → lightbox ——— */
-          const i = lbIdx++;
-          return `<figure class="pp-gitem" data-lb-idx="${i}">
-            <div class="pp-gitem__wrap">
-              <img class="pp-gitem__img" src="${m.src}" alt="${m.caption || ""}" loading="lazy" />
-              <div class="pp-gitem__zoom">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-                </svg>
-              </div>
-            </div>
-            ${m.caption ? `<figcaption class="pp-gitem__cap">${m.caption}</figcaption>` : ""}
+          if (m.type === "video") {
+            return `<figure class="pp-stack-fig">
+              <video class="pp-stack-media" controls playsinline preload="metadata">
+                <source src="${m.src}" />
+              </video>
+              ${m.caption ? `<figcaption>${m.caption}</figcaption>` : ""}
+            </figure>`;
+          }
+          if (m.type === "link-image") {
+            // Image cliquable → lien vers site web, avec bouton "Voir le site"
+            return `<figure class="pp-stack-fig">
+              <a href="${m.href}" target="_blank" rel="noopener" class="pp-site-link-wrap">
+                <img class="pp-stack-media" src="${m.src}" alt="${m.caption || ""}" loading="lazy" />
+                <div class="pp-site-link-overlay">
+                  <span class="pp-site-link-btn">Voir le site <span>↗</span></span>
+                </div>
+              </a>
+              ${m.caption ? `<figcaption>${m.caption}</figcaption>` : ""}
+            </figure>`;
+          }
+          // image standard
+          return `<figure class="pp-stack-fig">
+            <img class="pp-stack-media" src="${m.src}" alt="${m.caption || ""}" loading="lazy" />
+            ${m.caption ? `<figcaption>${m.caption}</figcaption>` : ""}
           </figure>`;
         }).join("")}
       </div>`
@@ -405,7 +273,8 @@ function renderProjectPage(p, idx) {
                 <span class="pp-nav__name">${projects[prevIdx].title}</span>
               </span>
             </button>`
-          : `<span></span>`}
+          : `<span></span>`
+        }
       </div>
       <div class="pp-nav__next">
         ${nextIdx !== null
@@ -416,24 +285,31 @@ function renderProjectPage(p, idx) {
               </span>
               <span class="pp-nav__arrow">→</span>
             </button>`
-          : `<span></span>`}
+          : `<span></span>`
+        }
       </div>
     </div>`;
 
-  // ---- HTML final ----
   panel.innerHTML = `
     <div class="pp-inner">
+
+      <!-- Barre retour -->
       <div class="pp-topbar">
-        <button class="pp-close" id="ppClose" aria-label="Fermer">← Retour aux projets</button>
+        <button class="pp-close" id="ppClose" aria-label="Fermer">
+          ← Retour aux projets
+        </button>
       </div>
 
+      <!-- Titre + catégorie -->
       <div class="pp-header">
         <h2 class="display pp-title">${p.title}<span class="accent">.</span></h2>
         <p class="pp-subtitle kicker">${p.subtitle}</p>
       </div>
 
+      <!-- Image hero pleine largeur -->
       ${heroHTML}
 
+      <!-- Bloc infos : Client · Rôle · Outils -->
       <div class="pp-meta-bar">
         <div class="pp-meta-item">
           <h3 class="pp-meta-label">Client</h3>
@@ -451,30 +327,30 @@ function renderProjectPage(p, idx) {
         </div>
       </div>
 
+      <!-- Le Défi -->
       <div class="pp-text-section">
         <h2 class="pp-section-title">Le Défi</h2>
         <p class="pp-section__text">${p.challenge}</p>
       </div>
+
+      <!-- La Solution -->
       <div class="pp-text-section">
         <h2 class="pp-section-title">La Solution</h2>
         <p class="pp-section__text">${p.solution}</p>
       </div>
 
+      <!-- Galerie empilée pleine largeur -->
       ${galleryHTML}
+
+      <!-- Nav précédent / suivant -->
       ${navHTML}
+
     </div>`;
 
-  // — Events —
+  // Events
   document.getElementById("ppClose").addEventListener("click", closeProject);
-
-  panel.querySelectorAll("[data-goto]").forEach(btn =>
-    btn.addEventListener("click", () => openProject(parseInt(btn.getAttribute("data-goto"), 10)))
-  );
-
-  panel.querySelectorAll(".pp-gitem[data-lb-idx]").forEach(fig => {
-    fig.addEventListener("click", () => {
-      openLightbox(lbItems, parseInt(fig.getAttribute("data-lb-idx"), 10));
-    });
+  panel.querySelectorAll("[data-goto]").forEach((btn) => {
+    btn.addEventListener("click", () => openProject(parseInt(btn.getAttribute("data-goto"), 10)));
   });
 }
 
@@ -549,7 +425,6 @@ function initReveal() {
 // ========== Boot ==========
 document.addEventListener("DOMContentLoaded", () => {
   injectProjectPage();
-  injectLightbox();
   renderWork();
   renderSkills();
   renderEducation();
