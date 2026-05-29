@@ -9,14 +9,17 @@ const projects = [
     client: "Concours national IUT",
     role: "Création vidéo, travail d'équipe",
     tools: ["Premiere Pro", "After Effects"],
-    img: "assets/Je filme ma formation/AFFICHE.png",
+    img: "assets/Je filme ma formation/Logo.png",
     context: "Participation au concours national « Je filme ma formation » organisé par le réseau des IUT. Projet collectif mené avec 4 autres étudiants de la promotion.",
     challenge: "Raconter notre formation en 3 minutes de façon authentique, créative et impactante, en partant de zéro avec un matériel limité.",
     solution: "Narration visuelle construite autour de témoignages sincères, montage dynamique sous Premiere Pro et motion design sous After Effects. Résultat : Trophée d'Or.",
     gallery: [
-      { type: "image", src: "assets/Je filme ma formation/Logo.png", caption: "Trophée d'Or — Je filme ma formation" },
-       { type: "image", src: "assets/Dossier Odysseia/Odysseia banner.png", caption: "Bannière — SAE-Bière" },
-      // { type: "youtube", videoId: "TON_ID_YOUTUBE", caption: "Vidéo primée" },
+      { type: "image", src: "assets/Je filme ma formation/Gagnant.png", caption: "Trophée d'Or — Je filme ma formation" },
+       { type: "image", src: "assets/Je filme ma formation/AFFICHE.png", caption: "AFFICHE" },
+       { type: "image", src: "assets/Je filme ma formation/charte_graphique.jpg", caption: "Charte graphique" },
+       { type: "image", src: "assets/Je filme ma formation/Gagnant.png", caption: "Trophée d'or_Je filme ma formation" },
+
+      { type: "youtube", videoId: "https://youtu.be/Ln3s7tyS4Vc", caption: "Vidéo primée" },
     ],
   },
   {
