@@ -44,6 +44,7 @@ const projects = [
       // Pour ajouter un lien vers le site web, utilise type:"link-image" avec href:
       { type: "link-image", src: "assets/Dossier Odysseia/Odysseia-website-3.jpg", href: "https://but1.mmi-iutsf.org/S2/2025/odysseia/index.php?route=accueil", caption: "Site web SAE-Bière" },
        { type: "image", src: "assets/Dossier Odysseia/ODYSSEIA-rsn-i.jpg", caption: "Compte instagram Odysseïa" },
+
       { type: "youtube", videoId: "Ic1YwxXq5x4", caption: "Vidéo promo" },
     ],
   },
@@ -68,7 +69,8 @@ const projects = [
       { type: "image", src: "assets/Dossier IJT/Variantes du logo.jpg", caption: "Variantes du logo " },
       { type: "image", src: "assets/Dossier IJT/Mode d'utilisation.jpg", caption: "Mode d'utilisation " },
       { type: "link-image", src: "assets/Dossier IJT/capture d'écran.png", href: "https://but1.mmi-iutsf.org/S1/2025_S1/groupe_i/index.html", caption: "Site web vitrine" },
-      { type: "youtube", videoId: "EuM88tKi4T4", caption: "Vidéo promo" },
+
+      { type: "youtube", videoId: "EuM88tKi4T4", caption: "Vidéo de sensibilisation" },
     ],
   },
   
