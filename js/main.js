@@ -56,7 +56,7 @@ const projects = [
     client: "Association fictive (Projet Universitaire)",
     role: "Identité visuelle, supports de communication, page web",
     tools: ["Illustrator", "Figma", "InDesign"],
-    img: "assets/Dossier ",
+    img: "assets/Dossier IJT/Logo.jpg",
     context: "Projet de création d'une identité de marque complète pour une association fictive engagée dans le développement durable. De la conception du logo jusqu'à la page web vitrine.",
     challenge: "Construire une image forte, mémorable et accessible qui reflète les valeurs d'une association à budget limité.",
     solution: "Palette épurée, iconographie simple et cohérente déclinée sur flyer, affiche, carte de visite et page web responsive conçue sur Figma.",
