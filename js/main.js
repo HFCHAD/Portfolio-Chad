@@ -22,7 +22,7 @@ const projects = [
       { type: "image", src: "assets/Je filme ma formation/charte_graphique.jpg", caption: "Charte graphique" },
       { type: "image", src: "assets/Je filme ma formation/Logo MI.jpg",          caption: "Logo" },
       { type: "image", src: "assets/Je filme ma formation/AFFICHE.png",          caption: "Affiche" },
-      { type: "youtube", videoId: ,                                caption: "Vidéo primée" },
+      { type: "youtube", videoId: "Ln3s7tyS4Vc",                                caption: "Vidéo primée" },
     ],
   },
   {
